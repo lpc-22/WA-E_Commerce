@@ -10,3 +10,23 @@
 #product-search-form {
     width: 100%;
 }
+
+div .addToCartSuccess {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 200px;
+    height: 50px;
+    background-color: green;
+    color: white;
+    text-align: center;
+    line-height: 50px;
+    font-size: 16px;
+    z-index: 999;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+div .addToCartSuccess.show {
+    transform: translateX(0%);
+}
