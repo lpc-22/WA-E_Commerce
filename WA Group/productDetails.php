@@ -26,6 +26,11 @@ if (mysqli_num_rows($result) === 0) {
 
 $product = mysqli_fetch_assoc($result);
 
+// Declare product name and price
+$product_name = $product['name'];
+$product_price = $product['price'];
+$product_category= $product['category'];
+$product_description= $product['description'];
     // Close connection
     mysqli_close($link);
 ?>
@@ -34,6 +39,7 @@ $product = mysqli_fetch_assoc($result);
 <html lang="en" data-bs-theme="light">
 
 <head>
+    
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -75,7 +81,7 @@ $product = mysqli_fetch_assoc($result);
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Account</a></li>
-                            <li><a class="dropdown-item" href="#">Cart</a></li>
+                            <li><a class="dropdown-item" href="cart.php">Cart</a></li>
                             <li><a class="dropdown-item" href="#">Setting</a></li>
                             <li>
                                 <hr class="dropdown-divider">
@@ -110,10 +116,10 @@ $product = mysqli_fetch_assoc($result);
             <img id="product-image" src="Img/<?php echo $product['image']; ?>" alt="Product image" class="img-fluid">
             </div>
             <div class="col-md-6">
-            <h2 id="product-name"><?php echo htmlspecialchars($product['name']); ?></h2>
-            <p id="product-category"><?php echo htmlspecialchars($product['category']); ?></p>
-            <p id="product-price">Price: $<?php echo htmlspecialchars(number_format($product['price'], 2)); ?></p>
-            <p id="product-description"><?php echo nl2br(htmlspecialchars($product['description'])); ?></p>
+            <h2 id="product-name"><?php echo $product_name; ?></h2>
+            <p id="product-category"><?php echo $product_category; ?></p>
+            <p id="product-price"><?php echo $product_price; ?></p>
+            <p id="product-description">Description: <?php echo $product_description; ?></p>
 
                 <div class="d-flex align-items-center">
                     <label for="product-quantity" class="me-2">Quantity:</label>
@@ -121,7 +127,8 @@ $product = mysqli_fetch_assoc($result);
                         style="width: 100px;">
                 </div>
 
-                <button id="addToCartBtn" class="btn btn-primary mt-3" data-id="<?php echo htmlspecialchars($product['id']); ?>">Add to Cart</button>
+                <button id="addToCartBtn" class="btn btn-primary mt-3" product-id="<?php echo $product['id']; ?>">Add to Cart</button>
+                <div id="addToCartSuccess" class="addToCartSuccess">ADD TO CART SUCCESS</div>
 
             </div>
         </div>
@@ -129,14 +136,14 @@ $product = mysqli_fetch_assoc($result);
     <script>
         // Get the "Add to cart" button and add a click event listener
         const addToCartBtn = document.getElementById('addToCartBtn');
+        const addToCartSuccess = document.getElementById('addToCartSuccess');
         addToCartBtn.addEventListener('click', addToCart);
 
         function addToCart() {
             const addToCartBtn = document.getElementById('addToCartBtn');
-            const productId = parseInt(addToCartBtn.getAttribute('data-id'));
-
+            const productId = parseInt(addToCartBtn.getAttribute('product-id'));
             const productName = document.getElementById('product-name').textContent;
-            const productPrice = parseFloat(document.getElementById('product-price').textContent.slice(7));
+            const productPrice = parseFloat(document.getElementById('product-price').textContent);
             const productQuantity = parseInt(document.getElementById('product-quantity').value);
 
             const product = {
@@ -146,8 +153,8 @@ $product = mysqli_fetch_assoc($result);
                 quantity: productQuantity
             };
             let cart;
-            if (sessionStorage.getItem('cart')) {
-                cart = JSON.parse(sessionStorage.getItem('cart'));
+            if (localStorage.getItem('cart')) {
+                cart = JSON.parse(localStorage.getItem('cart'));
             } else {
                 cart = [];
             }
@@ -160,8 +167,11 @@ $product = mysqli_fetch_assoc($result);
                 cart.push(product);
             }
 
-            sessionStorage.setItem('cart', JSON.stringify(cart));
-            alert('Product added to cart successfully!');
+            localStorage.setItem('cart', JSON.stringify(cart));
+            addToCartSuccess.classList.add('show'); // show the success message
+              setTimeout(function() {
+                addToCartSuccess.classList.remove('show'); // hide the success message after 2 seconds
+                 }, 2000);
         }
 
     </script>
