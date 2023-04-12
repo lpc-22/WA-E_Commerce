@@ -102,7 +102,7 @@
                             <img src="Img/'. $row['image'] .'" class="card-img-top object-fit-cover" alt="...">
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title"><a class="stretched-link" href="productDetails.php?product_id=1">' . $row['name'] . '</a></h5>
+                            <h5 class="card-title"><a class="stretched-link" href="productDetails.php?product_id='. $row['id'] .'">' . $row['name'] . '</a></h5>
                             $' . $row['price'] . '
                         </div>
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
