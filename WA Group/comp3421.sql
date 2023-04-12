@@ -88,7 +88,7 @@ INSERT INTO `products` (`id`, `name`, `description`, `category`, `price`, `image
 (1, 'Dog Food', '10KG', 'Food', 300.00, 'dog_food.jpg'),
 (2, 'Cat Food', '10KG', 'Food', 320.00, 'cat_food.jpg'),
 (3, 'Dog Leash', 'comfortable dog leash', 'Accessories', 120.00, 'dog_leash.jpg'),
-(4, 'Rubber Ball', 'playful ball for dogs', 'Toys', 50.00, 'dog_ball.jpg');
+(4, 'Rubber Ball', 'playful ball for dogs', 'Toy', 50.00, 'dog_ball.jpg');
 
 -- --------------------------------------------------------
 

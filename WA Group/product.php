@@ -1,3 +1,4 @@
+<?php include("connection.php") ?>
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="light">
 
@@ -11,6 +12,7 @@
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="Style/style.css">
+    <script src="/Script/product.js"></script>
     <title>Online Pet Store</title>
 </head>
 
@@ -74,92 +76,46 @@
     <!-- Filter list -->
     <div class="container-lg my-4">
         <div class="row">
-            <button type="button" class="mx-2 col-auto btn btn-outline-primary active">All</button>
-            <button type="button" class="mx-2 col-auto btn btn-outline-primary">Cat</button>
-            <button type="button" class="mx-2 col-auto btn btn-outline-primary">Dog</button>
-            <button type="button" class="mx-2 col-auto btn btn-outline-primary">Food</button>
-            <button type="button" class="mx-2 col-auto btn btn-outline-primary">Toy</button>
+            <button type="button" class="mx-2 col-auto btn btn-outline-primary active" id="ProductFilter_All">All</button>
+            <button type="button" class="mx-2 col-auto btn btn-outline-primary" id="ProductFilter_Food">Food</button>
+            <button type="button" class="mx-2 col-auto btn btn-outline-primary" id="ProductFilter_Toy">Toy</button>
+            <button type="button" class="mx-2 col-auto btn btn-outline-primary" id="ProductFilter_Accessories">Accessories</button>
         </div>
     </div>
 
     <!-- Product listing -->
     <div class="container-lg text-center mb-5">
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
-            <div class="col">
-                <div class="card h-100">
-                    <div class="ratio ratio-1x1">
-                        <img src="Img/dog_food.jpg" class="card-img-top object-fit-cover" alt="...">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title"><a class="stretched-link" href="productDetails.php?product_id=1">Product
-                                Name</a></h5>
-                        $500
-                    </div>
-                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100">
-                    <div class="ratio ratio-1x1">
-                        <img src="Img/cat_food.jpg" class="card-img-top object-fit-cover" alt="...">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title"><a class="stretched-link" href="productDetails.php?product_id=2">Product
-                                Name</a></h5>
-                        $500
-                    </div>
-                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100">
-                    <div class="ratio ratio-1x1">
-                        <img src="Img/dog_ball.jpg" class="card-img-top object-fit-cover" alt="...">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title"><a class="stretched-link" href="productDetails.php?product_id=3">Product
-                                Name</a></h5>
-                        $500
-                    </div>
-                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100">
-                    <div class="ratio ratio-1x1">
-                        <img src="Img/dog_leash.jpg" class="card-img-top object-fit-cover" alt="...">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title"><a class="stretched-link" href="productDetails.php?product_id=4">Product
-                                Name</a></h5>
-                        $500
-                    </div>
-                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100">
-                    <img src="Img/product-04.webp" class="card-img-top object-fit-cover" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title"><a class="stretched-link" href="productDetails.php?product_id=5">Product
-                                Name</a></h5>
-                        $500
-                    </div>
-                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
-                    </div>
-                </div>
-            </div>
 
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4" id="product_list">
+
+            <?php
+
+            $query = "SELECT * FROM products";
+            $results = mysqli_query($link, $query);
+
+            while ($row = mysqli_fetch_assoc($results)) {
+
+                echo 
+                '<div class="col '.$row['category'].' products">
+                    <div class="card h-100">
+                        <div class="ratio ratio-1x1">
+                            <img src="Img/'. $row['image'] .'" class="card-img-top object-fit-cover" alt="...">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title"><a class="stretched-link" href="productDetails.php?product_id=1">' . $row['name'] . '</a></h5>
+                            $' . $row['price'] . '
+                        </div>
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+                        </div>
+                    </div>
+                </div>
+                ';
+            }
+
+            ?>
         </div>
+
     </div>
 
     <nav aria-label="Page navigation example">
