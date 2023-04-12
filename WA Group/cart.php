@@ -49,13 +49,13 @@ session_start();
                             Account
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Account</a></li>
+                            <li><a class="dropdown-item" href="account.html">Account</a></li>
                             <li><a class="dropdown-item" href="cart.php">Cart</a></li>
-                            <li><a class="dropdown-item" href="#">Setting</a></li>
+                            <li><a class="dropdown-item" href="setting.html">Setting</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="#">Login</a></li>
+                            <li><a class="dropdown-item" href="login.html">Login</a></li>
                         </ul>
                     </li>
 
