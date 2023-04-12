@@ -70,7 +70,7 @@ $product_description= $product['description'];
             <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                 <ul class="navbar-nav">
                     <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="product.html" class="nav-link active">Product</a></li>
+                    <li class="nav-item"><a href="product.php" class="nav-link active">Product</a></li>
                     <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
                     <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
 
@@ -111,16 +111,13 @@ $product_description= $product['description'];
             <p id="product-category"><?php echo $product_category; ?></p>
             <p id="product-price"><?php echo $product_price; ?></p>
             <p id="product-description">Description: <?php echo $product_description; ?></p>
-
                 <div class="d-flex align-items-center">
                     <label for="product-quantity" class="me-2">Quantity:</label>
                     <input type="number" id="product-quantity" class="form-control" min="1" max="99" value="1"
                         style="width: 100px;">
                 </div>
-
                 <button id="addToCartBtn" class="btn btn-primary mt-3" product-id="<?php echo $product['id']; ?>">Add to Cart</button>
                 <div id="addToCartSuccess" class="addToCartSuccess">ADD TO CART SUCCESS</div>
-
             </div>
         </div>
     </div>
