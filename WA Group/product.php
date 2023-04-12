@@ -13,7 +13,7 @@
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="Style/style.css">
     <script src="/Script/product.js"></script>
-    <title>Online Pet Store</title>
+    <title>Petify Online Pet Store</title>
 </head>
 
 <body>
@@ -21,7 +21,7 @@
         <div class="container-lg">
             <!-- Brand -->
             <img src="Img/pet-logo.png" class="logo">
-            <a class="navbar-brand" href="index.html">Band</a>
+            <a class="navbar-brand" href="index.html">Petify</a>
 
             <!-- Toggler -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -34,7 +34,7 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                 <ul class="navbar-nav">
                     <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="product.html" class="nav-link active">Product</a></li>
+                    <li class="nav-item"><a href="product.php" class="nav-link active">Product</a></li>
                     <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
                     <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
 

@@ -56,7 +56,8 @@ $product_description= $product['description'];
     <nav class="navbar navbar-expand-sm bg-body-tertiary">
         <div class="container-lg">
             <!-- Brand -->
-            <a class="navbar-brand" href="index.html">Band</a>
+            <img src="Img/pet-logo.png" class="logo">
+            <a class="navbar-brand" href="index.html">Petify</a>
 
             <!-- Toggler -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
