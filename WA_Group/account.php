@@ -1,3 +1,15 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['username']) || !isset($_SESSION['email'])) {
+    header("Location: login.php");
+    exit;
+}
+
+$username = $_SESSION['username'];
+$email = $_SESSION['email'];
+?>
+
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="light">
 
@@ -8,15 +20,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="stylesheet" href="Style/style.css">
-    <title>Petify Online Pet Store</title>
+    <title>Online Pet Store - Account</title>
 </head>
 
 <body>
     <nav class="navbar navbar-expand-sm bg-body-tertiary">
         <div class="container-lg">
             <!-- Brand -->
-            <img src="Img/pet-logo.png" class="logo">
-            <a class="navbar-brand" href="index.html">Petify</a>
+            <a class="navbar-brand" href="index.html">Band</a>
 
             <!-- Toggler -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -28,9 +39,9 @@
             <!-- Navbar item -->
             <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
                     <li class="nav-item"><a href="product.php" class="nav-link">Product</a></li>
-                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link active">About</a></li>
                     <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
 
                     <!-- Nabbar item - Dropdown -->
@@ -40,7 +51,7 @@
                             Account
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="account.php">Account</a></li>
+                            <li><a class="dropdown-item" href="account.html">Account</a></li>
                             <li><a class="dropdown-item" href="cart.php">Cart</a></li>
                             <li><a class="dropdown-item" href="setting.html">Setting</a></li>
                             <li>
@@ -55,34 +66,22 @@
         </div>
     </nav>
 
-    <div class="slider">
-        <div class="rotator">
-            <div class="items">
-                <img src="Img/sildeshow_1.png" alt="items photo" />
+    <div class="container-lg text-center mb-5">
+        <h2>Account Information</h2>
+    </div>
+	
+    <div class="container-lg text-center mb-5">
+        <div class="card h-100">
+            <img src="Img/OIP.jpeg" class="card-img-top" alt="..." style="max-width: 100px;">
+            <div class="card-body">
+                <h5 class="card-title"><a class="stretched-link" href="productDetails.php?product_id=1">Username: <?php echo htmlspecialchars($username); ?></a>
+                </h5>
+				
+				<p>Email: <?php echo htmlspecialchars($email); ?></p>
+
             </div>
-            <div class="items">
-                <img src="Img/sildeshow_2.png" />
-            </div>
-            <div class="items">
-                <img src="Img/sildeshow_3.png" alt="items photo" />
-            </div>
-            <div class="items">
-                <img src="Img/sildeshow_4.png" alt="items photo" />
-            </div>
-            <div class="items">
-                <img src="Img/sildeshow_5.png" />
-            </div>
-            <div class="items">
-                <img src="Img/sildeshow_6.png" alt="items photo" />
-            </div>
-            <div class="items">
-                <img src="Img/sildeshow_7.png" alt="items photo" />
-            </div>
-            <div class="items">
-                <img src="Img/sildeshow_8.png" alt="items photo" />
-            </div>
-            <div class="items">
-                <img src="Img/sildeshow_9.png" alt="items photo" />
+            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
             </div>
         </div>
     </div>
