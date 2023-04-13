@@ -95,7 +95,7 @@ session_start();
 
         <h5 class="text-end" id="cart-total">Total: $0</h5>
         <button id="clearCartBtn" class="btn btn-danger">Clear Cart</button>
-        <button id="checkoutBtn" class="btn btn-primary ms-3" href="checkout.html">Checkout</button>
+        <button id="checkoutBtn" class="btn btn-primary ms-3">Checkout</button>
 
 
     </div>
@@ -145,7 +145,7 @@ const checkoutForm = document.getElementById('checkoutBtn');
         checkoutForm.addEventListener('click', (event) => {
             event.preventDefault();
             if (cart.length > 0) {
-                window.location.href = "checkout.html";
+                window.location.href = "checkout.php";
             } else {
                 alert('Your cart is empty. Please add products before proceeding to checkout.');
             }
