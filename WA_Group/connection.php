@@ -1,7 +1,7 @@
 <?php
 define('hostname', 'localhost');
 define('user', 'root');
-define('password', '');
+define('password', 'root');
 define('database', 'COMP3421');
 
  
