@@ -5,7 +5,7 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['email'])) {
 	?>
 	<script>
 		alert("Please Log in first");
-		window.location.href = 'index.html';
+		window.location.href = 'login.html';
 	</script>
 	<?php
 }
@@ -15,7 +15,7 @@ $email = $_SESSION['email'];
 
 if (isset($_POST['sign-out'])) {
     session_destroy();
-    header("Location: index.html");
+    header("Location: index.php");
     exit;
 }
 ?>

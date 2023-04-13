@@ -32,6 +32,7 @@ echo'
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="account.php">Account</a></li>
                     <li><a class="dropdown-item" href="cart.php">Cart</a></li>
+                    <li><a class="dropdown-item" href="vieworder.php">View My Order</a></li>
                     <li><a class="dropdown-item" href="setting.html">Setting</a></li>
                     <li>
                         <hr class="dropdown-divider">
