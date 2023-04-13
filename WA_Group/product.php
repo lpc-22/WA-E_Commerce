@@ -18,7 +18,8 @@
 
 <body>
 
-    <?php include("navBar.php") ?>
+    <?php session_start();
+    include("navBar.php") ?>
 
     <!-- Search bar -->
     <div class="d-flex container-lg justify-content-center my-4 ">

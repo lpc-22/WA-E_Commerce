@@ -20,7 +20,7 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                     aria-expanded="false">
-                    Account
+                    <?php echo isset($_SESSION['username']) ? htmlspecialchars($_SESSION['username']) : "Account"; ?>
                 </a>
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="account.php">Account</a></li>
@@ -31,7 +31,9 @@
                     <li>
                         <hr class="dropdown-divider">
                     </li>
-                    <li><a class="dropdown-item" href="login.html">Login</a></li>
+                    <?php if (!isset($_SESSION['username']) || !isset($_SESSION['email'])): ?>
+                        <li><a class="dropdown-item" href="login.html">Login</a></li>
+                    <?php endif; ?>
                 </ul>
             </li>
         </ul>

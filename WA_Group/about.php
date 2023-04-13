@@ -12,7 +12,8 @@
 </head>
 
 <body>
-    <?php include("navBar.php") ?>
+    <?php session_start();
+    include("navBar.php") ?>
 
 
 
