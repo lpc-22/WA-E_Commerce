@@ -29,34 +29,39 @@ session_start();
     <div class="d-flex container-lg justify-content-center my-4">
         <form class="row form-inline justify-content-center" id="product-search-form">
             <div class="col-8">
-                <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                <input class="form-control border border-dark" type="search" placeholder="Search" aria-label="Search">
             </div>
             <div class="col-auto">
-                <button class="btn btn-primary" type="submit">Search</button>
+                <button class="btn btn-dark" type="submit">Search</button>
             </div>
         </form>
     </div>
 
-    <div class="container my-5">
-        <h2>Your Cart</h2>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Product</th>
-                    <th>Price</th>
-                    <th>Quantity</th>
-                    <th>Total</th>
-                </tr>
-            </thead>
-            <tbody id="cart-items">
-            </tbody>
-        </table>
-
-        <h5 class="text-end" id="cart-total">Total: $0</h5>
-        <button id="clearCartBtn" class="btn btn-danger">Clear Cart</button>
-        <button id="checkoutBtn" class="btn btn-primary ms-3">Checkout</button>
-
-
+    <!-- Cart -->
+    <div class="container-lg my-5">
+        <div class="card border border-dark">
+            <div class="card-header"><h2>Your Cart</h2></div>
+            <div class="card-body">
+                <table class="table">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody id="cart-items"></tbody>
+            </table>
+            </div>
+            <div class="card-footer">
+                <h5 class="text-end me-5" id="cart-total">Total: $0</h5>
+                <div class="vstack gap-2 col-md-5 mx-auto mt-4">
+                    <button id="checkoutBtn" class="btn btn-dark mx-5">Checkout</button>
+                    <button id="clearCartBtn" class="btn btn-outline-dark mx-5">Clear Cart</button>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script>
@@ -65,12 +70,12 @@ session_start();
         cart.forEach(item => {
             const row = document.createElement('tr');
             row.innerHTML = `
-                <td>${item.name}</td>
-                <td>$${item.price}</td>
-                <td>${item.quantity}</td>
-                <td>$${(item.price * item.quantity).toFixed(2)}</td>
-                <td>
-              <button class="btn btn-danger btn-sm remove-item" data-id="${item.id}">
+                <td class="align-middle">${item.name}</td>
+                <td class="align-middle">$${item.price}</td>
+                <td class="align-middle">${item.quantity}</td>
+                <td class="align-middle">$${(item.price * item.quantity).toFixed(2)}</td>
+                <td class="align-middle">
+              <button class="btn btn-outline-danger btn-sm remove-item" data-id="${item.id}">
                 <i class="bi bi-trash-fill"></i>
                    </button>
                     </td>
