@@ -84,11 +84,16 @@ CREATE TABLE `products` (
 -- 傾印資料表的資料 `products`
 --
 
+
 INSERT INTO `products` (`id`, `name`, `description`, `category`, `price`, `image`) VALUES
-(1, 'Dog Food', '10KG', 'Food', 300.00, 'dog_food.jpg'),
-(2, 'Cat Food', '10KG', 'Food', 320.00, 'cat_food.jpg'),
-(3, 'Dog Leash', 'comfortable dog leash', 'Accessories', 120.00, 'dog_leash.jpg'),
-(4, 'Rubber Ball', 'playful ball for dogs', 'Toy', 50.00, 'dog_ball.jpg');
+(1, 'Pedigree Dog Food', '10KG', 'Food', 300.00, 'dog_food2.png'),
+(2, 'Nulo Mix Cat Food', '10KG', 'Food', 320.00, 'sildeshow_6.png'),
+(3, 'Black Dog Leash ', 'comfortable dog leash', 'Accessories', 120.00, 'dog_leash2.png'),
+(4, 'Rubber Balls', 'playful ball for dogs', 'Toys', 50.00, 'sildeshow_9.png'),
+(5, 'Hills Dog Food', '8KG', 'Food', 180.00, 'dog_food3.png'),
+(6, 'Purina Cat Food', '8KG', 'Food', 160.00, 'cat_food2.png'),
+(7, 'Brown Dog Leash', 'good looking dog leash', 'Accessories', 70.00, 'dog_leash3.png'),
+(8, 'Red Rubber Ball', 'fun ball for dogs', 'Toy', 90.00, 'sildeshow_8.png');
 
 -- --------------------------------------------------------
 
@@ -163,7 +168,7 @@ ALTER TABLE `order_items`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `users`
