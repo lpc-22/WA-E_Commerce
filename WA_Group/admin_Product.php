@@ -24,19 +24,6 @@ if($getOut){
 
 ?>
 
-<?php
-session_start();
-
-if (!isset($_SESSION['username']) || !isset($_SESSION['email'])) {
-	?>
-	<script>
-		alert("Please Log in first");
-		window.location.href = 'login.html';
-	</script>
-	<?php
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="light">
 
@@ -48,6 +35,7 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['email'])) {
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="stylesheet" href="Style/style.css">
     <title>Online Pet Store</title>
+
 </head>
 
 <style>
