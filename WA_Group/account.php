@@ -61,12 +61,12 @@ if (isset($_POST['sign-out'])) {
 <body>
     <?php include("navBar.php")?>
 
-    <div class="container-lg text-center mb-5">
-        <h2>Account Information</h2>
-    </div>
 	
     <div class="container-sm text-center d-flex align-content-center" id="account-container">
-        <div class="card mx-auto my-5 border-dark border-4">
+        <div class="card mx-auto my-5 border-dark border">
+            <div class="card-header">
+                <h2>Account Information</h2>
+            </div>
 
             <img src="Img/OIP.jpeg" class="card-img-top mx-auto mt-5 rounded-circle" alt="...">
 

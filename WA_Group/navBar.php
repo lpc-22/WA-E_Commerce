@@ -1,7 +1,3 @@
-<?php 
-
-echo'
-
 <nav class="navbar navbar-expand-sm bg-dark" data-bs-theme="dark">
 <div class="container-lg">
     <!-- Brand -->
@@ -20,7 +16,7 @@ echo'
         <ul class="navbar-nav">
             <li class="nav-item"><a href="index.php" class="nav-link">Home</a></li>
             <li class="nav-item"><a href="product.php" class="nav-link">Product</a></li>
-            <li class="nav-item"><a href="about.php" class="nav-link active">About</a></li>
+            <li class="nav-item"><a href="about.php" class="nav-link">About</a></li>
             <li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>
 
             <!-- Nabbar item - Dropdown -->
@@ -44,7 +40,3 @@ echo'
     </div>
 </div>
 </nav>
-
-';
-
-?>
