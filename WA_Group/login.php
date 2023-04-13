@@ -7,18 +7,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    $sql = "SELECT name, email, password FROM users WHERE name = ?";
+    $sql = "SELECT id, name, email, password FROM users WHERE name = ?";
 
     if ($stmt = $link->prepare($sql)) {
         $stmt->bind_param("s", $username);
         $stmt->execute();
-        $stmt->bind_result($dbUsername, $dbEmail, $dbPassword);
+        $stmt->bind_result($dbUserID, $dbUsername, $dbEmail, $dbPassword);
 
         if ($stmt->fetch()) {
             if (strcmp($password, $dbPassword) === 0) {
                 // Store user data in session and redirect to account.php
+                $_SESSION['userID'] = $dbUserID;
                 $_SESSION['username'] = $dbUsername;
                 $_SESSION['email'] = $dbEmail;
+
                 header("Location: account.php");
                 exit;
             } else {

@@ -102,7 +102,7 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['email'])) {
             </table>
     
             <h5 class="text-end" id="cart-total">Total: $0</h5>
-            <form id="checkoutForm" action="processCheckout.php" method="post">
+            <form id="checkoutForm" action="updateorder.php" method="post">
                 <div class="mb-3">
                     <label for="address" class="form-label">Address</label>
                     <input type="text" class="form-control" id="address" required>
@@ -133,6 +133,7 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['email'])) {
                       </div>
                       <div class="col-md-1 mb-1 ">
                         <input type="text" class="form-control" id="credit-card-5" maxlength="3" placeholder="CSC"required>
+                        <input type="hidden" name="cart" id="cart-data">
                       </div>
                     </div>
                   </div>
@@ -158,7 +159,7 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['email'])) {
             });
     
             document.querySelector('#cart-total').textContent = `Total: $${total.toFixed(2)}`;
-    
+            document.getElementById('cart-data').value = JSON.stringify(cart);
             const checkoutForm = document.getElementById('checkoutForm');
             checkoutForm.addEventListener('submit', (event) => {
             event.preventDefault();
