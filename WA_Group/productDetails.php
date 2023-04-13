@@ -122,7 +122,6 @@ $product_description= $product['description'];
         </div>
     </div>
     <script>
-        // Get the "Add to cart" button and add a click event listener
         const addToCartBtn = document.getElementById('addToCartBtn');
         const addToCartSuccess = document.getElementById('addToCartSuccess');
         addToCartBtn.addEventListener('click', addToCart);

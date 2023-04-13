@@ -16,7 +16,7 @@ session_start();
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="Style/style.css">
     <title>Online Pet Store - Cart</title>
-    <!--trash ico弓 -->
+    <!--trash icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
 </head>
 
@@ -90,20 +90,18 @@ session_start();
                 </tr>
             </thead>
             <tbody id="cart-items">
-                <!-- Cart items will be added here dynamically using JavaScript -->
             </tbody>
         </table>
 
         <h5 class="text-end" id="cart-total">Total: $0</h5>
         <button id="clearCartBtn" class="btn btn-danger">Clear Cart</button>
+        <button id="checkoutBtn" class="btn btn-primary ms-3" href="checkout.html">Checkout</button>
+
 
     </div>
 
     <script>
-        // Get cart data from localStorage
         const cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-        // Display cart items and calculate the total
         let total = 0;
         cart.forEach(item => {
             const row = document.createElement('tr');
@@ -123,8 +121,6 @@ session_start();
             total += item.price * item.quantity;
             document.querySelector('#cart-items').appendChild(row);
         });
-
-        // Update cart total
         document.querySelector('#cart-total').textContent = `Total: $${total.toFixed(2)}`;
 
         function removeItem(itemId) {
@@ -138,15 +134,22 @@ function clearCart() {
   location.reload();
 }
 
-// Add a click event listener to the "Clear cart" button
 const clearCartBtn = document.getElementById('clearCartBtn');
 clearCartBtn.addEventListener('click', clearCart);
-
-// Add click event listeners to the "Remove item" buttons
 document.querySelectorAll('.remove-item').forEach(btn => {
   btn.addEventListener('click', () => removeItem(parseInt(btn.getAttribute('data-id'))));
 });
 
+
+const checkoutForm = document.getElementById('checkoutBtn');
+        checkoutForm.addEventListener('click', (event) => {
+            event.preventDefault();
+            if (cart.length > 0) {
+                window.location.href = "checkout.html";
+            } else {
+                alert('Your cart is empty. Please add products before proceeding to checkout.');
+            }
+        });
     </script>
 
 </body>
