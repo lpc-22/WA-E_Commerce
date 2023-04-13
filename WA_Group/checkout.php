@@ -164,7 +164,7 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['email'])) {
             document.getElementById('total-data').value = total.toFixed(2);
             const checkoutForm = document.getElementById('checkoutForm');
             checkoutForm.addEventListener('submit', (event) => {
-            alert('Order confirmed! Return to home page now!');
+            alert('Order confirmed! Go to your check your placed order now!');
             window.location.href = "index.html";
         });
     </script>

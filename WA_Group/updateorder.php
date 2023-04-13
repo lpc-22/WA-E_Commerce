@@ -31,8 +31,8 @@ foreach ($cart as $item) {
 $stmt_order_items->close();
 $stmt_order->close();
 $link->close();
-
-header("Location: account.php");
+$_SESSION['order_processed'] = true;
+header("Location: vieworder.php");
 exit();
 
 ?>
