@@ -89,7 +89,7 @@ $product_description= $product['description'];
                 <button id="increment" class="btn btn-outline-secondary">+</button>
             </div>
             
-            <button id="addToCartBtn" class="btn btn-primary mt-3" product-id="<?php echo $product['id']; ?>">Add to Cart</button>
+            <button id="addToCartBtn" class="btn btn-outline-dark mt-auto" product-id="<?php echo $product['id']; ?>">Add to Cart</button>
             <div id="addToCartSuccess" class="addToCartSuccess">ADD TO CART SUCCESS</div>
         </div>
     </div>
