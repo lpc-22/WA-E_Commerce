@@ -59,26 +59,69 @@ $product_description= $product['description'];
 
 
 
-    <div class="container my-5">
-        <div class="row">
-            <div class="col-md-6">
+<div class="container my-5">
+    <div class="row">
+        <div class="col-md-6">
             <img id="product-image" src="Img/<?php echo $product['image']; ?>" alt="Product image" class="img-fluid">
+        </div>
+        <div class="col-md-6">
+            <h2 id="product-name" class="mb-4"><?php echo $product_name; ?></h2>
+            
+            <div class="frame mb-3 p-3 border">
+                <p><strong>Product Category:</strong></p>
+                <p id="product-category"><?php echo $product_category; ?></p>
             </div>
-            <div class="col-md-6">
-            <h2 id="product-name"><?php echo $product_name; ?></h2>
-            <p id="product-category"><?php echo $product_category; ?></p>
-            <p id="product-price"><?php echo $product_price; ?></p>
-            <p id="product-description">Description: <?php echo $product_description; ?></p>
-                <div class="d-flex align-items-center">
-                    <label for="product-quantity" class="me-2">Quantity:</label>
-                    <input type="number" id="product-quantity" class="form-control" min="1" max="99" value="1"
-                        style="width: 100px;">
-                </div>
-                <button id="addToCartBtn" class="btn btn-primary mt-3" product-id="<?php echo $product['id']; ?>">Add to Cart</button>
-                <div id="addToCartSuccess" class="addToCartSuccess">ADD TO CART SUCCESS</div>
+
+            <div class="frame mb-3 p-3 border">
+                <p><strong>Price (HKD$): </strong></p>
+                <p id="product-price"><?php echo $product_price; ?></p>
             </div>
+
+            <div class="frame mb-4 p-3 border">
+                <p><strong>Product Description:</strong></p>
+                <p id="product-description"><?php echo $product_description; ?></p>
+            </div>
+
+            <div class="d-flex align-items-center mb-3">
+                <p><strong>Quantity:</strong></p>
+                <button id="decrement" class="btn btn-outline-secondary ms-3">-</button>
+                <input type="number" id="product-quantity" class="form-control mx-2" min="1" max="99" value="1" style="width: 60px; text-align: center;">
+                <button id="increment" class="btn btn-outline-secondary">+</button>
+            </div>
+            
+            <button id="addToCartBtn" class="btn btn-primary mt-3" product-id="<?php echo $product['id']; ?>">Add to Cart</button>
+            <div id="addToCartSuccess" class="addToCartSuccess">ADD TO CART SUCCESS</div>
         </div>
     </div>
+</div>
+<style>
+    .frame {
+        background-color: #D2C6B8;
+        border-radius: 5px;
+    }
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+</style>
+
+<script>
+    document.getElementById('decrement').addEventListener('click', function() {
+        let quantity = document.getElementById('product-quantity');
+        if (quantity.value > 1) {
+            quantity.value -= 1;
+        }
+    });
+
+    document.getElementById('increment').addEventListener('click', function() {
+        let quantity = document.getElementById('product-quantity');
+        if (quantity.value < 99) {
+            quantity.value = parseInt(quantity.value) + 1;
+        }
+    });
+</script>
+
     <script>
         const addToCartBtn = document.getElementById('addToCartBtn');
         const addToCartSuccess = document.getElementById('addToCartSuccess');
