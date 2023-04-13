@@ -50,7 +50,7 @@ session_start();
                             Account
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="account.html">Account</a></li>
+                            <li><a class="dropdown-item" href="account.php">Account</a></li>
                             <li><a class="dropdown-item" href="cart.php">Cart</a></li>
                             <li><a class="dropdown-item" href="setting.html">Setting</a></li>
                             <li>
