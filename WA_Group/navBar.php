@@ -34,7 +34,7 @@ if (isset($_SESSION['username'])) {
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
-                        Account
+                        <?php echo isset($_SESSION['username']) ? ($_SESSION['username']) : "Account"; ?>
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="account.php">Account</a></li>
