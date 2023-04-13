@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 				?>
 				<script>
 					alert("Incorrect password");
-					window.location.href = 'login.html';
+					window.location.href = 'login.php';
 				</script>
 				<?php
             }
@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 				?>
 				<script>
 					alert("Username not found");
-					window.location.href = 'login.html';
+					window.location.href = 'login.php';
 				</script>
 				<?php
         }

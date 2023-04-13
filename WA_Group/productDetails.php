@@ -1,6 +1,5 @@
 <?php
 // Start the session
-session_start();
 
 // Get the product ID from the URL
 $product_id = isset($_GET['product_id']) ? intval($_GET['product_id']) : null;

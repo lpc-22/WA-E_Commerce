@@ -1,7 +1,4 @@
-<?php
-// Start the session
-session_start();
-?>
+
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="light">
 
@@ -24,18 +21,6 @@ session_start();
 
 <?php include("navBar.php") ?>
 
-
-    <!-- Search bar -->
-    <div class="d-flex container-lg justify-content-center my-4">
-        <form class="row form-inline justify-content-center" id="product-search-form">
-            <div class="col-8">
-                <input class="form-control border border-dark" type="search" placeholder="Search" aria-label="Search">
-            </div>
-            <div class="col-auto">
-                <button class="btn btn-dark" type="submit">Search</button>
-            </div>
-        </form>
-    </div>
 
     <!-- Cart -->
     <div class="container-lg my-5">

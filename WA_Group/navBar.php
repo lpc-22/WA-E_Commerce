@@ -39,6 +39,7 @@ if (isset($_SESSION['username'])) {
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="account.php">Account</a></li>
                         <li><a class="dropdown-item" href="cart.php">Cart</a></li>
+                        <li><a class="dropdown-item" href="vieworder.php">View My Order</a></li>
                       
                     <?php
                         //Only Admin will have this option               
@@ -50,7 +51,9 @@ if (isset($_SESSION['username'])) {
                         <li>
                             <hr class="dropdown-divider">
                         </li>
+                        <?php if (!isset($_SESSION['username']) || !isset($_SESSION['email'])): ?>
                         <li><a class="dropdown-item" href="login.php">Login</a></li>
+                    <?php endif; ?>
                     </ul>
                 </li>
 

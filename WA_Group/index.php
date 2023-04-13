@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <?php session_start();
+    <?php 
     include("navBar.php") 
     ?>
 
