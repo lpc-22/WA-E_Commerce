@@ -6,7 +6,7 @@ echo'
 <div class="container-lg">
     <!-- Brand -->
     <img src="Img/pet-logo1.png" class="logo" style="width: 50px;">
-    <a class="navbar-brand mx-2 p-0" href="index.html">Petify</a>
+    <a class="navbar-brand mx-2 p-0" href="index.php">Petify</a>
 
     <!-- Toggler -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
