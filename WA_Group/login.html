@@ -37,14 +37,14 @@
     <div class="container">
         <div class="login-container">
             <h2 class="text-center mb-4">Online Pet Store</h2>
-            <form>
+            <form action="login.php" method="post">
                 <div class="input-group mb-3">
                     <span class="input-group-text"><i class="fas fa-user"></i></span>
-                    <input type="text" class="form-control" placeholder="Username" aria-label="Username">
+                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" name="username">
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text"><i class="fas fa-lock"></i></span>
-                    <input type="password" class="form-control" placeholder="Password" aria-label="Password">
+                    <input type="password" class="form-control" placeholder="Password" aria-label="Password" name="password">
                 </div>
                 <button type="submit" class="btn btn-primary w-100 mb-3">Sign In</button>
             </form>
