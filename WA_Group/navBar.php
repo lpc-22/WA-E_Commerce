@@ -1,5 +1,3 @@
-<?php $username = $_SESSION['username']; ?>
-
 <nav class="navbar navbar-expand-sm bg-dark" data-bs-theme="dark">
 <div class="container-lg">
     <!-- Brand -->
@@ -31,10 +29,9 @@
                     <li><a class="dropdown-item" href="account.php">Account</a></li>
                     <li><a class="dropdown-item" href="cart.php">Cart</a></li>
                     
-                    //Only Admin will have this option
-                    <?php if($username == "Admin"){ ?>
+                   
                     <li><a class="dropdown-item" href="admin_Product.php">Manage Products</a></li>
-                    <?php } ?>
+
                     
                     <li>
                         <hr class="dropdown-divider">
