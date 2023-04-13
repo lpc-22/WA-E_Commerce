@@ -97,7 +97,7 @@
 
                 echo 
                 '<div class="col '.$row['category'].' products">
-                    <div class="card h-100">
+                    <div class="card h-100 border-dark">
                         <div class="ratio ratio-1x1">
                             <img src="Img/'. $row['image'] .'" class="card-img-top object-fit-cover" alt="...">
                         </div>
