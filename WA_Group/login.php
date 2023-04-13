@@ -22,10 +22,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 header("Location: account.php");
                 exit;
             } else {
-                echo "Incorrect password.";
+				?>
+				<script>
+					alert("Incorrect password");
+					window.location.href = 'login.html';
+				</script>
+				<?php
             }
         } else {
-            echo "Username not found.";
+				?>
+				<script>
+					alert("Username not found");
+					window.location.href = 'login.html';
+				</script>
+				<?php
         }
 
         $stmt->close();
