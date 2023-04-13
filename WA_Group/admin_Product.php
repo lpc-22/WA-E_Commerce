@@ -17,7 +17,7 @@ if (isset($_SESSION['username'])) {
 if($getOut){
     ?>
 	<script>
-		window.location.href = 'index.html';
+		window.location.href = 'index.php';
 	</script>
 	<?php
 }
