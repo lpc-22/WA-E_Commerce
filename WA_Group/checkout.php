@@ -117,23 +117,24 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['email'])) {
                     <label for="credit-card" class="form-label">Credit Card Number</label>
                     <div class="row">
                       <div class="col-md-1 mb-1 position-relative">
-                        <input type="text" class="form-control" id="credit-card-1" maxlength="4" placeholder="1234"required>
+                        <input type="text" class="form-control" id="credit-card-1" maxlength="4" placeholder="1234" oninput="this.value=this.value.replace(/[^\d]/,'')"required>
                         <span class="position-absolute top-50 start-100 translate-middle-y">-</span>
                       </div>
                       <div class="col-md-1 mb-1 position-relative">
-                        <input type="text" class="form-control" id="credit-card-2" maxlength="4" placeholder="1234"required>
+                        <input type="text" class="form-control" id="credit-card-2" maxlength="4" placeholder="1234" oninput="this.value=this.value.replace(/[^\d]/,'')"required>
                         <span class="position-absolute top-50 start-100 translate-middle-y">-</span>
                       </div>
                       <div class="col-md-1 mb-1 position-relative">
-                        <input type="text" class="form-control" id="credit-card-3" maxlength="4" placeholder="1234"required>
+                        <input type="text" class="form-control" id="credit-card-3" maxlength="4" placeholder="1234" oninput="this.value=this.value.replace(/[^\d]/,'')"required>
                         <span class="position-absolute top-50 start-100 translate-middle-y">-</span>
                       </div>
                       <div class="col-md-1 mb-1">
-                        <input type="text" class="form-control" id="credit-card-4" maxlength="4" placeholder="1234"required>
+                        <input type="text" class="form-control" id="credit-card-4" maxlength="4" placeholder="1234" oninput="this.value=this.value.replace(/[^\d]/,'')"required>
                       </div>
                       <div class="col-md-1 mb-1 ">
-                        <input type="text" class="form-control" id="credit-card-5" maxlength="3" placeholder="CSC"required>
+                        <input type="text" class="form-control" id="credit-card-5" maxlength="3" placeholder="CSC" oninput="this.value=this.value.replace(/[^\d]/,'')" required>
                         <input type="hidden" name="cart" id="cart-data">
+                        <input type="hidden" name="total" id="total-data">
                       </div>
                     </div>
                   </div>
@@ -160,10 +161,9 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['email'])) {
     
             document.querySelector('#cart-total').textContent = `Total: $${total.toFixed(2)}`;
             document.getElementById('cart-data').value = JSON.stringify(cart);
+            document.getElementById('total-data').value = total.toFixed(2);
             const checkoutForm = document.getElementById('checkoutForm');
             checkoutForm.addEventListener('submit', (event) => {
-            event.preventDefault();
-            localStorage.removeItem('cart');
             alert('Order confirmed! Return to home page now!');
             window.location.href = "index.html";
         });
