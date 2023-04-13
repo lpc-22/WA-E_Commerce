@@ -120,19 +120,58 @@
 
     </div>
 
-    <nav aria-label="Page navigation example">
-        <ul class="pagination justify-content-center">
+    <?php
+$rows_per_page = 8;
+$current_page = isset($_GET['page']) ? $_GET['page'] : 1;
+
+$offset = ($current_page - 1) * $rows_per_page;
+
+$query = "SELECT * FROM products LIMIT $rows_per_page OFFSET $offset";
+$results = mysqli_query($link, $query);
+while ($row = mysqli_fetch_assoc($results)) {
+}
+
+$total_rows_query = "SELECT COUNT(*) FROM products";
+$total_rows_result = mysqli_query($link, $total_rows_query);
+$total_rows = mysqli_fetch_array($total_rows_result)[0];
+$total_pages = ceil($total_rows / $rows_per_page);
+
+?>
+
+<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+
+        <?php if ($current_page > 1): ?>
+            <li class="page-item">
+                <a class="page-link" href="?page=<?php echo $current_page - 1; ?>" tabindex="-1">Previous</a>
+            </li>
+        <?php else: ?>
             <li class="page-item disabled">
                 <a class="page-link" href="#" tabindex="-1">Previous</a>
             </li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <?php endif; ?>
+
+        <?php for ($i = 1; $i <= $total_pages; $i++): ?>
+            <?php if ($i == $current_page): ?>
+                <li class="page-item active"><a class="page-link" href="#"><?php echo $i; ?></a></li>
+            <?php else: ?>
+                <li class="page-item"><a class="page-link" href="?page=<?php echo $i; ?>"><?php echo $i; ?></a></li>
+            <?php endif; ?>
+        <?php endfor; ?>
+
+        <?php if ($current_page < $total_pages): ?>
             <li class="page-item">
+                <a class="page-link" href="?page=<?php echo $current_page + 1; ?>">Next</a>
+            </li>
+        <?php else: ?>
+            <li class="page-item disabled">
                 <a class="page-link" href="#">Next</a>
             </li>
-        </ul>
-    </nav>
+        <?php endif; ?>
+
+    </ul>
+</nav>
+
 <!-- Site footer -->
 <footer class="site-footer">
     <div class="container">
