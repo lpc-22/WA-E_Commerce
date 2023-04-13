@@ -50,7 +50,7 @@ if (isset($_SESSION['username'])) {
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" href="login.html">Login</a></li>
+                        <li><a class="dropdown-item" href="login.php">Login</a></li>
                     </ul>
                 </li>
 
