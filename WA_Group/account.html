@@ -9,6 +9,31 @@
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="stylesheet" href="Style/style.css">
     <title>Online Pet Store</title>
+    <style>
+        th {
+            text-align: left;
+        }
+
+        td {
+            text-align: right;
+        }
+
+        #account-container {
+            min-height: 80vh;
+        }
+
+        .card {
+            width: 100%;
+        }
+
+        .card-img-top {
+            max-width: 200px;
+        }
+
+        .card-body {
+            width: 75%;
+        }
+    </style>
 </head>
 
 <body>
@@ -55,16 +80,30 @@
         </div>
     </nav>
 
-    <div class="container-lg text-center mb-5">
-        <div class="card h-100">
-            <img src="Img/OIP.jpeg" class="card-img-top" alt="..." style="max-width: 100px;">
-            <div class="card-body">
-                <h5 class="card-title"><a class="stretched-link" href="productDetails.php?product_id=1">User name</a>
-                </h5>
+    <div class="container-sm text-center d-flex align-content-center" id="account-container">
+        <div class="card mx-auto my-5 border-dark border-4">
+
+            <img src="Img/OIP.jpeg" class="card-img-top mx-auto mt-5 rounded-circle" alt="...">
+
+            <div class="card-body mx-auto">
+                <!-- Table -->
+                <table class="table mt-3">
+                    <tbody>
+                        <tr>
+                            <th>User Name: </th>
+                            <td>username</td>
+                        </tr>
+                        <tr>
+                            <th>Email Address: </th>
+                            <td>abcdefg@gmail.com</td>
+                        </tr>
+                    </tbody>
+                </table>
 
             </div>
+
             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+
             </div>
         </div>
     </div>
