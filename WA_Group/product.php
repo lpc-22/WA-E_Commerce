@@ -17,55 +17,14 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-sm bg-body-tertiary">
-        <div class="container-lg">
-            <!-- Brand -->
-            <img src="Img/pet-logo.png" class="logo">
-            <a class="navbar-brand" href="index.html">Petify</a>
 
-            <!-- Toggler -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <!-- Navbar item -->
-            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="product.php" class="nav-link active">Product</a></li>
-                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-
-                    <!-- Nabbar item - Dropdown -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Account
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="account.php">Account</a></li>
-                            <li><a class="dropdown-item" href="cart.php">Cart</a></li>
-                            <li><a class="dropdown-item" href="setting.html">Setting</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="login.html">Login</a></li>
-                        </ul>
-                    </li>
-
-                </ul>
-            </div>
-        </div>
-    </nav>
-
+    <?php include("navBar.php") ?>
 
     <!-- Search bar -->
     <div class="d-flex container-lg justify-content-center my-4">
         <form class="row form-inline justify-content-center" id="product-search-form">
             <div class="col-8">
-                <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                <input id="productSearchingBar" class="form-control" type="search" placeholder="Search" aria-label="Search" onkeyup="SearchingProduct()">
             </div>
             <div class="col-auto">
                 <button class="btn btn-dark" type="submit">Search</button>
@@ -172,33 +131,8 @@ $total_pages = ceil($total_rows / $rows_per_page);
     </ul>
 </nav>
 
-<!-- Site footer -->
-<footer class="site-footer">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-12 col-md-6">
-          <h6>About</h6>
-          <p class="text-justify">Welcome to Petify, your one-stop online shop for all your pet needs! We are a team of passionate animal lovers who believe that pets are an important part of our lives and deserve the best care and attention.</p>
-        </div>
-        <div class="col-xs-6 col-md-3">
-          <h6>Quick Links</h6>
-          <ul class="footer-links">
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-          </ul>
-        </div>
-      </div>
-      <hr>
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-8 col-sm-6 col-xs-12">
-          <p class="copyright-text">Copyright &copy; 2023 All Rights Reserved by COMP3421
-          </p>
-        </div>
-      </div>
-    </div>
-</footer>
+<?php include("footer.php") ?>
+
 </body>
 
 </html>
