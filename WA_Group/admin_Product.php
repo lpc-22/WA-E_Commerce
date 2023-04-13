@@ -1,5 +1,40 @@
 <?php include("connection.php");
 //error_reporting(0); //Enable it if all tests are runned.
+
+session_start();
+$getOut = False;
+
+if (isset($_SESSION['username'])) {
+
+    if($_SESSION['username'] != "Admin" ){
+        $getOut = True;
+    }
+
+}else{
+    $getOut = True;
+}
+
+if($getOut){
+    ?>
+	<script>
+		window.location.href = 'index.html';
+	</script>
+	<?php
+}
+
+?>
+
+<?php
+session_start();
+
+if (!isset($_SESSION['username']) || !isset($_SESSION['email'])) {
+	?>
+	<script>
+		alert("Please Log in first");
+		window.location.href = 'login.html';
+	</script>
+	<?php
+}
 ?>
 
 <!DOCTYPE html>
@@ -197,14 +232,17 @@
         
         </div>
     </div>
-    
+
     <?php include("footer.php") ?>
-    
+
 </body>
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
     crossorigin="anonymous"></script>
+
+
 
 </html>
 
