@@ -21,10 +21,10 @@
     <?php include("navBar.php") ?>
 
     <!-- Search bar -->
-    <div class="d-flex container-lg justify-content-center my-4">
+    <div class="d-flex container-lg justify-content-center my-4 ">
         <form class="row form-inline justify-content-center" id="product-search-form">
             <div class="col-8">
-                <input id="productSearchingBar" class="form-control" type="search" placeholder="Search" aria-label="Search" onkeyup="SearchingProduct()">
+                <input id="productSearchingBar" class="form-control border-dark" type="search" placeholder="Search" aria-label="Search" onkeyup="SearchingProduct()">
             </div>
             <div class="col-auto">
                 <button class="btn btn-dark" type="submit">Search</button>
