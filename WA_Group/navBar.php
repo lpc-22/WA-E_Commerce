@@ -34,7 +34,7 @@
                     //Only Admin will have this option
                     <?php if($username == "Admin"){ ?>
                     <li><a class="dropdown-item" href="admin_Product.php">Manage Products</a></li>
-                    <?php}?>
+                    <?php } ?>
                     
                     <li>
                         <hr class="dropdown-divider">
