@@ -1,4 +1,15 @@
+<?php
+session_start();
 
+if (!isset($_SESSION['username']) || !isset($_SESSION['email'])) {
+	?>
+	<script>
+		alert("Please Log in first");
+		window.location.href = 'login.html';
+	</script>
+	<?php
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
