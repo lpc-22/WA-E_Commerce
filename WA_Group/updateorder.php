@@ -10,6 +10,7 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['email']) || !isset($_SESS
 $cart = json_decode($_POST['cart'], true);
 $userID = $_SESSION['userID'];
 $total = $_POST['total'];
+date_default_timezone_set('Asia/Hong_Kong');
 $order_date = date("Y-m-d H:i:s");
 
 $sql_order = "INSERT INTO orders (user_id, total, order_date) VALUES (?, ?, ?)";
