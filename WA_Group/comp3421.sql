@@ -89,7 +89,7 @@ INSERT INTO `products` (`id`, `name`, `description`, `category`, `price`, `image
 (1, 'Pedigree Dog Food', '10KG', 'Food', 300.00, 'dog_food2.png'),
 (2, 'Nulo Mix Cat Food', '10KG', 'Food', 320.00, 'sildeshow_6.png'),
 (3, 'Black Dog Leash ', 'comfortable dog leash', 'Accessories', 120.00, 'dog_leash2.png'),
-(4, 'Rubber Balls', 'playful ball for dogs', 'Toys', 50.00, 'sildeshow_9.png'),
+(4, 'Rubber Balls', 'playful ball for dogs', 'Toy', 50.00, 'sildeshow_9.png'),
 (5, 'Hills Dog Food', '8KG', 'Food', 180.00, 'dog_food3.png'),
 (6, 'Purina Cat Food', '8KG', 'Food', 160.00, 'cat_food2.png'),
 (7, 'Brown Dog Leash', 'good looking dog leash', 'Accessories', 70.00, 'dog_leash3.png'),
