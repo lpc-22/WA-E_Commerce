@@ -1,5 +1,27 @@
 <?php include("connection.php");
 //error_reporting(0); //Enable it if all tests are runned.
+
+session_start();
+$getOut = False;
+
+if (isset($_SESSION['username'])) {
+
+    if($_SESSION['username'] != "Admin" ){
+        $getOut = True;
+    }
+
+}else{
+    $getOut = True;
+}
+
+if($getOut){
+    ?>
+	<script>
+		window.location.href = 'index.php';
+	</script>
+	<?php
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -13,6 +35,7 @@
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="stylesheet" href="Style/style.css">
     <title>Online Pet Store</title>
+
 </head>
 
 <style>
@@ -197,14 +220,17 @@
         
         </div>
     </div>
-    
+
     <?php include("footer.php") ?>
-    
+
 </body>
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
     crossorigin="anonymous"></script>
+
+
 
 </html>
 
