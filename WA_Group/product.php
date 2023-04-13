@@ -68,7 +68,7 @@
                 <input class="form-control" type="search" placeholder="Search" aria-label="Search">
             </div>
             <div class="col-auto">
-                <button class="btn btn-primary" type="submit">Search</button>
+                <button class="btn btn-dark" type="submit">Search</button>
             </div>
         </form>
     </div>
@@ -76,15 +76,15 @@
     <!-- Filter list -->
     <div class="container-lg my-4">
         <div class="row">
-            <button type="button" class="mx-2 col-auto btn btn-outline-primary active" id="ProductFilter_All">All</button>
-            <button type="button" class="mx-2 col-auto btn btn-outline-primary" id="ProductFilter_Food">Food</button>
-            <button type="button" class="mx-2 col-auto btn btn-outline-primary" id="ProductFilter_Toy">Toy</button>
-            <button type="button" class="mx-2 col-auto btn btn-outline-primary" id="ProductFilter_Accessories">Accessories</button>
+            <button type="button" class="mx-2 col-auto btn btn-outline-dark active" id="ProductFilter_All">All</button>
+            <button type="button" class="mx-2 col-auto btn btn-outline-dark" id="ProductFilter_Food">Food</button>
+            <button type="button" class="mx-2 col-auto btn btn-outline-dark" id="ProductFilter_Toy">Toy</button>
+            <button type="button" class="mx-2 col-auto btn btn-outline-dark" id="ProductFilter_Accessories">Accessories</button>
         </div>
     </div>
 
     <!-- Product listing -->
-    <div class="container-lg text-center mb-5">
+    <div class="container-lg text-center mb-5" style="min-height: 80vh;">
 
         <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4" id="product_list">
 
@@ -101,12 +101,14 @@
                         <div class="ratio ratio-1x1">
                             <img src="Img/'. $row['image'] .'" class="card-img-top object-fit-cover" alt="...">
                         </div>
-                        <div class="card-body">
+                        <div class="card-body" style="transform: rotate(0);">
                             <h5 class="card-title"><a class="stretched-link" href="productDetails.php?product_id='. $row['id'] .'">' . $row['name'] . '</a></h5>
                             $' . $row['price'] . '
                         </div>
-                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent text-center">
+                                <p class="card-text text-center" style="transform: rotate(0);">
+                                    <a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a>
+                                </p>
                         </div>
                     </div>
                 </div>
