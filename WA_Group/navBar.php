@@ -18,10 +18,10 @@ echo'
     <!-- Navbar item -->
     <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
         <ul class="navbar-nav">
-            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="index.php" class="nav-link">Home</a></li>
             <li class="nav-item"><a href="product.php" class="nav-link">Product</a></li>
-            <li class="nav-item"><a href="about.html" class="nav-link active">About</a></li>
-            <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+            <li class="nav-item"><a href="about.php" class="nav-link active">About</a></li>
+            <li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>
 
             <!-- Nabbar item - Dropdown -->
             <li class="nav-item dropdown">
