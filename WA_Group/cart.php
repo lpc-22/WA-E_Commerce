@@ -25,6 +25,7 @@ session_start();
 <nav class="navbar navbar-expand-sm bg-body-tertiary">
         <div class="container-lg">
             <!-- Brand -->
+            <img src="Img/pet-logo.png" class="logo">
             <a class="navbar-brand" href="index.html">Band</a>
 
             <!-- Toggler -->

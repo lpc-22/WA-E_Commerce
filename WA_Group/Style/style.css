@@ -360,6 +360,11 @@ body {
   color: rgba(133, 61, 2, 0.792);
 }
 
+.navbar-brand:hover {
+  color: rgba(133, 61, 2, 0.792);
+  text-decoration: none;
+}
+
 .site-footer {
   background-color: var(--secondary-bg-color);
   color: var(--secondary-text-color);
