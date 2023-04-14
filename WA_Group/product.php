@@ -36,7 +36,7 @@
     <!-- Filter list -->
     <div class="container-lg my-4">
         <div class="row">
-            <button type="button" class="mx-2 col-auto btn btn-outline-dark active" id="ProductFilter_All">All</button>
+            <button type="button" class="mx-2 col-auto btn btn-outline-dark" id="ProductFilter_All">All</button>
             <button type="button" class="mx-2 col-auto btn btn-outline-dark" id="ProductFilter_Food">Food</button>
             <button type="button" class="mx-2 col-auto btn btn-outline-dark" id="ProductFilter_Toy">Toy</button>
             <button type="button" class="mx-2 col-auto btn btn-outline-dark" id="ProductFilter_Accessories">Accessories</button>

@@ -17,13 +17,12 @@
     <div class="container-lg my-5 mx-auto" style="min-height: 70vh;">
         <div class="card my-5 mx-auto shadow-lg" style="max-width: 80vw;">
             <div class="row g-0">
-                <div class="col-md-5">
+                <div class="col-lg-5">
                     <img src="Img/about-img-1.webp" class="img-fluid rounded w-100" alt="...">
                 </div>
-                <div class="col-md-7">
+                <div class="col-lg-7">
                     <div class="card-body">
                         <h2 class="card-title">About Us</h5>
-                        <p class="card-text">Eiusmod ex commodo ut nulla enim ea mollit irure excepteur anim commodo officia. Adipisicing consequat velit laborum proident. Elit eu mollit aliquip nostrud do culpa id aliqua ut fugiat cupidatat. Veniam dolore laborum magna. Aliqua dolore in aute labore eu voluptate aliqua nisi et. Do dolor aliquip dolor consectetur laboris deserunt sunt Lorem.</p>
                         <p class="card-text">Eiusmod ex commodo ut nulla enim ea mollit irure excepteur anim commodo officia. Adipisicing consequat velit laborum proident. Elit eu mollit aliquip nostrud do culpa id aliqua ut fugiat cupidatat. Veniam dolore laborum magna. Aliqua dolore in aute labore eu voluptate aliqua nisi et. Do dolor aliquip dolor consectetur laboris deserunt sunt Lorem.</p>
                     </div>
                 </div>
@@ -32,13 +31,12 @@
 
         <div class="card my-5 mx-auto shadow-lg" style="max-width: 80vw;">
             <div class="row g-0">
-                <div class="col-md-5">
-                    <img src="Img/about-img-1.webp" class="img-fluid rounded w-100" alt="...">
+                <div class="col-lg-5">
+                    <img src="Img/about-img-2.jpeg" class="img-fluid rounded w-100" alt="...">
                 </div>
-                <div class="col-md-7">
+                <div class="col-lg-7">
                     <div class="card-body">
                         <h2 class="card-title">About Us</h5>
-                        <p class="card-text">Eiusmod ex commodo ut nulla enim ea mollit irure excepteur anim commodo officia. Adipisicing consequat velit laborum proident. Elit eu mollit aliquip nostrud do culpa id aliqua ut fugiat cupidatat. Veniam dolore laborum magna. Aliqua dolore in aute labore eu voluptate aliqua nisi et. Do dolor aliquip dolor consectetur laboris deserunt sunt Lorem.</p>
                         <p class="card-text">Eiusmod ex commodo ut nulla enim ea mollit irure excepteur anim commodo officia. Adipisicing consequat velit laborum proident. Elit eu mollit aliquip nostrud do culpa id aliqua ut fugiat cupidatat. Veniam dolore laborum magna. Aliqua dolore in aute labore eu voluptate aliqua nisi et. Do dolor aliquip dolor consectetur laboris deserunt sunt Lorem.</p>
                     </div>
                 </div>

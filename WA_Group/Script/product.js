@@ -1,3 +1,4 @@
+
 window.onload = function() {
 
     //*******************FILTERING*******************//
@@ -13,6 +14,11 @@ window.onload = function() {
             child.style.display = "block";
         });
 
+        Filter_All.classList.add("active");
+        Filter_Food.classList.remove("active");
+        Filter_Toy.classList.remove("active");
+        Filter_Accessories.classList.remove("active");
+
     });
 
     Filter_Food.addEventListener("click", function() {
@@ -24,6 +30,11 @@ window.onload = function() {
         document.querySelectorAll("#product_list .Food").forEach(child => {
             child.style.display = "block";
         });
+
+        Filter_Food.classList.add("active");
+        Filter_All.classList.remove("active");
+        Filter_Toy.classList.remove("active");
+        Filter_Accessories.classList.remove("active");        
 
     });
 
@@ -37,7 +48,10 @@ window.onload = function() {
             child.style.display = "block";
         });
 
-
+        Filter_Toy.classList.add("active");
+        Filter_Food.classList.remove("active");
+        Filter_All.classList.remove("active");
+        Filter_Accessories.classList.remove("active");
     });
 
     Filter_Accessories.addEventListener("click", function() {
@@ -50,19 +64,44 @@ window.onload = function() {
             child.style.display = "block";
         });
 
-
+        Filter_Accessories.classList.add("active");
+        Filter_Food.classList.remove("active");
+        Filter_Toy.classList.remove("active");
+        Filter_All.classList.remove("active");
     });
-
-    //*******************SEARCHING*******************//
-
 
 
 };    
 
+
+//*******************SEARCHING*******************//
 function SearchingProduct(){
 
+    var Filter_All_Button = document.getElementById("ProductFilter_All");
+    var Filter_Food_Button = document.getElementById("ProductFilter_Food");
+    var Filter_Toy_Button = document.getElementById("ProductFilter_Toy");
+    var Filter_Accessories_Button = document.getElementById("ProductFilter_Accessories");
+
+
+    //Searching products within filtered product list.
+    if(Filter_All_Button.classList.contains("active")){
+
+        var productList = document.getElementsByClassName('products');
+
+    }else if(Filter_Food_Button.classList.contains("active")){
+
+        var productList = document.getElementsByClassName('Food');
+
+    }else if(Filter_Toy_Button.classList.contains("active")){
+
+        var productList = document.getElementsByClassName('Toy');
+
+    }else if(Filter_Accessories_Button.classList.contains("active")){
+
+        var productList = document.getElementsByClassName('Accessories');
+    }
+
     var query = document.getElementById('productSearchingBar').value.toUpperCase();
-    var productList = document.getElementsByClassName('products');
 
     //Loop through all products
     for (var i = 0; i < productList.length; i++) {
