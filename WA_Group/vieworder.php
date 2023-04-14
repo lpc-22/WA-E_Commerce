@@ -41,6 +41,7 @@ $link->close();
 
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="light">
+<link rel="icon" type="image/png" sizes="16x16" href="Img/favicon-16x16.png">
 
 <head>
     <meta charset="UTF-8">
