@@ -1,5 +1,5 @@
 <?php include("connection.php");
-//error_reporting(0); //Enable it if all tests are runned.
+error_reporting(0); //Enable it if all tests are runned.
 
 session_start();
 $getOut = False;
@@ -95,7 +95,7 @@ if($getOut){
                         <label>Toy</label><br>
 
                         <label>Price:</label><br>
-                        <input class="form-control" type="number" name="AddProduct_Price"><br>
+                        <input class="form-control" type="number" name="AddProduct_Price" min=0 step="0.01"><br>
 
                         <label>Image:</label><br>
                         <input class="form-control" type="file" name="AddProduct_Image"><br>
@@ -118,12 +118,10 @@ if($getOut){
                             <!--enctype="multipart/form-data" is to allowed files to be uploaded within form tag.s-->
                             <form action="admin_Product.php" id="mod_id_autofill" method="post" enctype="multipart/form-data">
                                 <label>ID:</label><br>
-                                <input class="form-control" type="text" name="ModProduct_ID_AutoFill">
+                                <input class="form-control" type="number" name="ModProduct_ID_AutoFill" min="0" >
                                 <input class="btn btn-primary mt-3" type="submit" name="Submit_form_ModProductAutoFill" value="Get" >
                             </form>
-                        </li>
 
-                        <li class="list-group-item">
 
                             <?php 
                             
@@ -136,65 +134,68 @@ if($getOut){
             
                                 if($row = mysqli_fetch_assoc($execute)){
                                     echo'
+                                    </li>
+                                    <li class="list-group-item">
                                     
-                                    <form action="admin_Product.php" id="mod_fullform" method="post" enctype="multipart/form-data">
+                                        <form action="admin_Product.php" id="mod_fullform" method="post" enctype="multipart/form-data">
 
-                                    <label>ID:</label><br>
-                                    <input class="form-control" readonly type="text" name="ModProduct_ID"value='.$row['id'].'><br>
+                                            <label>ID:</label><br>
+                                            <input class="form-control" readonly type="text" name="ModProduct_ID"value='.$row['id'].'><br>
 
-                                    <label>Name:</label><br>
-                                    <input class="form-control" type="text" name="ModProduct_Name" placeholder="Product Name" value='.$row['name'].'><br>
+                                            <label>Name:</label><br>
+                                            <input class="form-control" type="text" name="ModProduct_Name" placeholder="Product Name" value='.$row['name'].'><br>
 
-                                    <label>Description:</label><br>
-                                    <input class="form-control" type="text" name="ModProduct_Description" value='.$row['description'].'><br>
-                                    
-                                    <label>Category:</label><br>
-                                    ';
+                                            <label>Description:</label><br>
+                                            <input class="form-control" type="text" name="ModProduct_Description" value='.$row['description'].'><br>
+                                            
+                                            <label>Category:</label><br>
+                                            ';
 
-                                    $Accessories = "";
-                                    $Food = "";
-                                    $Toy = "";
-                                    if($row["category"] == "Accessories"){
-                                        $Accessories = "checked";
-                                    }else if($row["category"] == "Toy"){
-                                        $Toy = "checked";
-                                    }else if($row["category"] == "Food"){
-                                        $Food = "checked";
-                                    }
+                                            $Accessories = "";
+                                            $Food = "";
+                                            $Toy = "";
+                                            if($row["category"] == "Accessories"){
+                                                $Accessories = "checked";
+                                            }else if($row["category"] == "Toy"){
+                                                $Toy = "checked";
+                                            }else if($row["category"] == "Food"){
+                                                $Food = "checked";
+                                            }
 
-                                    echo'
-                                    <input class="form-check-input" type="radio" name="ModProduct_Type" value="Food" '.$Food.'>
-                                    <label>Food</label><br>
-                                    <input class="form-check-input" type="radio" name="ModProduct_Type" value="Accessories" '.$Accessories.'>
-                                    <label>Accessories</label><br>
-                                    <input class="form-check-input" type="radio" name="ModProduct_Type" value="Toy" '.$Toy.'>
-                                    <label>Toy</label><br><br>
+                                            echo'
+                                            <input class="form-check-input" type="radio" name="ModProduct_Type" value="Food" '.$Food.'>
+                                            <label>Food</label><br>
+                                            <input class="form-check-input" type="radio" name="ModProduct_Type" value="Accessories" '.$Accessories.'>
+                                            <label>Accessories</label><br>
+                                            <input class="form-check-input" type="radio" name="ModProduct_Type" value="Toy" '.$Toy.'>
+                                            <label>Toy</label><br><br>
 
-                                    <label>Price:</label><br>
-                                    <input class="form-control" type="number" name="ModProduct_Price" value='.$row['price'].'><br><br>
+                                            <label>Price:</label><br>
+                                            <input class="form-control" type="number" name="ModProduct_Price" value='.$row['price'].'><br><br>
 
-                                    <label>Image:</label><br><br>
+                                            <label>Image:</label><br><br>
 
-                                    <div class="ratio ratio-1x1">
-                                        <img src="Img/'. $row['image'] .'" class="object-fit-cover" alt="..."><br><br>
-                                    </div>
+                                            <div class="ratio ratio-1x1">
+                                                <img src="Img/'. $row['image'] .'" class="object-fit-cover" alt="..."><br><br>
+                                            </div>
 
-                                    <label>Select new image:</label><br>
-                                    <input class="form-control" type="file" name="ModProduct_Image"><br><br>
+                                            <label>Select new image:</label><br>
+                                            <input class="form-control" type="file" name="ModProduct_Image"><br><br>
 
-                                    <input class="btn btn-primary mt-3" type="submit" name="Submit_form_ModProduct" value="Modify" >
+                                            <input class="btn btn-primary mt-3" type="submit" name="Submit_form_ModProduct" value="Modify" >
 
-                                    </form>
+                                        </form>
+
+                                    </li>
 
                                     ';
                                 }else{
-                                    echo "Invalid ID.";
+                                    echo "<br>Invalid ID. </li>" ;
                                 }
 
                             }
                             
-                            ?>
-                        </li>
+                            ?>  
                     </ul>
                 </div>
             </div>
@@ -209,10 +210,30 @@ if($getOut){
                         <form action="admin_Product.php" method="post" enctype="multipart/form-data">
                             <label>ID:</label><br>
                             <!--To show to product ID to admin-->
-                            <input class="form-control" type="text" name="DelProduct_ID">
+                            <input class="form-control" type="number" name="DelProduct_ID" min=0>
                             <input class="btn btn-primary mt-3" type="submit" name="Submit_form_DeleteProduct" value="Delete" >
                         </form>
+                        
+                        <?php
+                        if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['Submit_form_DeleteProduct'])){
 
+                            $Del_ID = $_POST['DelProduct_ID'];
+                    
+                            $query = "DELETE FROM products WHERE id = $Del_ID";
+                            $execute = mysqli_query($link, $query);
+                    
+                            #By using mysqli_affected_rows instead of mysqli_query, because mysqli_query function doesn't return an error when no rows are affected by the delete statement.
+                            if (mysqli_affected_rows($link) > 0) {
+                                echo '<script>
+                                        alert("Product deleted.");
+                                    </script>';
+                            }else{
+                                echo "<br>Invalid ID.";
+
+                            }
+                    
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
@@ -264,7 +285,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                         UploadImage("AddProduct_Image");
 
-                        echo "New product " .$Add_Name. " Added.";
+                        echo '<script>
+                                alert("New product '.$Add_Name. ' Added.");
+                            </script>';
                 }
             }
         }
@@ -290,7 +313,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             if(mysqli_query($link, $MODProductQuery1)){
 
-                    echo "Product " .$Mod_Name. "'s detail changed.";
+                    echo '<script>
+                    alert("Product " .$Mod_Name. "\'s detail changed.");
+                    </script>';
             }
 
         //If uploaded new image
@@ -313,26 +338,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                     mysqli_query($link, $MODProductQuery2);
       
-                    echo "Product " .$Mod_Name. "'s detail changed.";
+                    echo '<script>
+                        alert("Product " .$Mod_Name. "\'s detail changed.");
+                    </script>';
                 }
 
             }
-        }
-
-    }
-    
-    else if(isset($_POST['Submit_form_DeleteProduct'])){
-
-        $Del_ID = $_POST['DelProduct_ID'];
-
-        $query = "DELETE FROM products WHERE id = $Del_ID";
-        $execute = mysqli_query($link, $query);
-
-        #By using mysqli_affected_rows instead of mysqli_query, because mysqli_query function doesn't return an error when no rows are affected by the delete statement.
-        if (mysqli_affected_rows($link) > 0) {
-            echo "Product deleted.";
-        }else{
-            echo "Invalid ID.";
         }
 
     }
@@ -356,7 +367,9 @@ function checkUploadedImageFormat($ImgName, $AllowFormat){
             return true;
         }
     }else{
-        echo "Please upload product picture";
+        echo '<script>
+                    alert("Please upload product picture.");
+                </script>';
     }
 
 }
@@ -388,7 +401,9 @@ function checkDuplicatedProductName($ProductName, $sqlconnection, $Operation, $p
         $result = mysqli_query($sqlconnection, $query);
 
         if (mysqli_num_rows($result) > 0) {
-            echo "Product name already existed";
+            echo '<script>
+                    alert("New product name already existed.");
+                </script>';
             return true;
         } else {
             return false;
@@ -401,7 +416,9 @@ function checkDuplicatedProductName($ProductName, $sqlconnection, $Operation, $p
         $result = mysqli_query($sqlconnection, $query);
 
         if (mysqli_num_rows($result) > 0) {
-            echo "Product name already existed";
+            echo '<script>
+                    alert("New product name already existed.");
+                </script>';
             return true;
         } else {
             return false;
