@@ -28,9 +28,6 @@
             <div class="col-8">
                 <input id="productSearchingBar" class="form-control border-dark" type="search" placeholder="Search" aria-label="Search" onkeyup="SearchingProduct()">
             </div>
-            <div class="col-auto">
-                <button class="btn btn-dark" type="submit">Search</button>
-            </div>
         </form>
     </div>
 
