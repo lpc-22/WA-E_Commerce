@@ -315,7 +315,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             if(mysqli_query($link, $MODProductQuery1)){
 
                     echo '<script>
-                    alert("Product " .$Mod_Name. "\'s detail changed.");
+                        alert("Product ' .$Mod_Name. '\'s detail changed.");
                     </script>';
             }
 
@@ -340,7 +340,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     mysqli_query($link, $MODProductQuery2);
       
                     echo '<script>
-                        alert("Product " .$Mod_Name. "\'s detail changed.");
+                        alert("Product ' .$Mod_Name. '\'s detail changed.");
                     </script>';
                 }
 
