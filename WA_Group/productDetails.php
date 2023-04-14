@@ -163,6 +163,7 @@ $product_description= $product['description'];
         }
 
     </script>
+        <?php include("footer.php") ?>
 </body>
 
 </html>

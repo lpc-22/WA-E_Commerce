@@ -179,6 +179,7 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['email'])) {
         });
     </script>
         </script>
+        <?php include("footer.php") ?>
     </body>
 
 </html>
