@@ -130,8 +130,11 @@ $link->close();
 <div class="container-sm">
     <?php foreach ($orders as $order): ?>
         <div class="card mb-4">
-            <div class="card-header">
-                Order ID: <?= $order['id'] ?> | Date: <?= $order['order_date'] ?> | Total: $<?= $order['total'] ?>
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <span>Order ID: <?= $order['id'] ?> | Date: <?= $order['order_date'] ?> | Total: $<?= $order['total'] ?></span>
+                <div>
+                    <a href="mailto:?subject=I%20want%20to%20report%20the%20order%20%23<?= $order['id'] ?>&body=Order%20ID:%20<?= $order['id'] ?>%0A%0APlease%20describe%20your%20issue%20here:" class="btn btn-danger">Report Problem</a>
+                </div>
             </div>
             <div class="card-body">
                 <table class="table table-hover table-bordered">
@@ -158,6 +161,7 @@ $link->close();
         </div>
     <?php endforeach; ?>
 </div>
+
 
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
