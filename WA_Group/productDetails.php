@@ -1,36 +1,28 @@
 <?php
-// Start the session
-
-// Get the product ID from the URL
 $product_id = isset($_GET['product_id']) ? intval($_GET['product_id']) : null;
 
-// If there's no product ID or it's not a valid integer, redirect to another page or show an error
 if ($product_id === null) {
     die("Invalid product ID");
 }
-// Config the database
 require_once "connection.php";
 
-// Fetch product details from the database
 $query = "SELECT * FROM products WHERE id = ?";
 $stmt = mysqli_prepare($link, $query);
 mysqli_stmt_bind_param($stmt, "i", $product_id);
 mysqli_stmt_execute($stmt);
 $result = mysqli_stmt_get_result($stmt);
 
-// Check if the product exists
 if (mysqli_num_rows($result) === 0) {
     die("Product not found");
 }
 
 $product = mysqli_fetch_assoc($result);
 
-// Declare product name and price
 $product_name = $product['name'];
 $product_price = $product['price'];
 $product_category= $product['category'];
 $product_description= $product['description'];
-    // Close connection
+
     mysqli_close($link);
 ?>
 
