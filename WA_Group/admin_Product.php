@@ -244,7 +244,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['Submit_form_ADDProduct'])) {
 
         $Add_ID = $_POST['AddProduct_ID'];
-        $Add_Name = $_POST['ModProduct_Name'];
+        $Add_Name = $_POST['AddProduct_Name'];
         $Add_Desc = $_POST['AddProduct_Description'];
         $Add_Type = $_POST['AddProduct_Type'];
         $Add_Price = $_POST['AddProduct_Price'];

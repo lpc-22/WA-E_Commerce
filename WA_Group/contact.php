@@ -9,14 +9,19 @@
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="stylesheet" href="Style/style.css">
     <title>Online Pet Store</title>
+    <style>
+        h1 {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 
 <body>
 <?php include("navBar.php") ?>
 
-<div class="container-lg">
-    <div class="grid">
-        <div class="g-col-6">
+<div class="container-lg mt-5">
+    <div class="row gx-5">
+        <div class="col-lg-6 my-2">
             <h1>Contact us</h1>
             <p>Esse voluptate proident officia cillum amet. Incididunt ipsum qui et velit ex exercitation aliqua adipisicing culpa nulla consectetur Lorem exercitation sint incididunt. Proident adipisicing nulla officia non consectetur. Aliqua veniam ad nulla deserunt aute elit ad occaecat esse eiusmod. Id ullamco ea aliqua amet amet amet ea culpa voluptate aliqua. Nulla veniam veniam mollit deserunt laboris et pariatur ullamco officia ex dolore excepteur. Nostrud id cupidatat esse consequat in occaecat excepteur velit elit sint quis. Consectetur qui enim laboris do sint fugiat esse eiusmod aute ullamco ea reprehenderit adipisicing.</p>
             <h1>Address:</h1>
@@ -29,22 +34,28 @@
             <p>Mon-Fri: 10:00 - 20:00</p>
             <p>Sat-Sun: 11:00 - 18:00</p>
         </div>
-        <div class="g-col-6">
+        <div class="col-lg-6 my-2" style="background-color: rgba(255,255, 255, 0.3);">
+        <div class="card container px-2 mx-md-auto my-5">
             <form action="">
-            <div class="mb-3">
+            <div class="my-3">
                 <label for="exampleFormControlInput1" class="form-label">Name</label>
                 <input class="form-control" id="exampleFormControlInput1">
             </div>
-            <div class="mb-3">
+            <div class="my-3">
+                <label for="exampleFormControlInput1" class="form-label">Phone Number</label>
+                <input class="form-control" id="exampleFormControlInput1">
+            </div>
+            <div class="my-3">
                 <label for="exampleFormControlInput1" class="form-label">Email</label>
                 <input type="email" class="form-control" id="exampleFormControlInput1">
             </div>
-            <div class="mb-3">
+            <div class="my-3">
                 <label for="exampleFormControlTextarea1" class="form-label">Message</label>
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
             </div>
-
+            <button type="submit" class="btn btn-dark w-100 mb-3">Submit</button>
             </form>
+        </div>
         </div>
     <!-- </div> -->
 </div>
