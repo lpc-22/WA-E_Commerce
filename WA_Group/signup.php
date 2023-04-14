@@ -46,7 +46,7 @@ session_start();
             <form action="signupSession.php" method="post">
                 <div class="input-group mb-3">
                     <span class="input-group-text"><i class="fas fa-user"></i></span>
-                    <input type="text" class="form-control" placeholder="Name" aria-label="Name" name="name" required>
+                    <input type="text" class="form-control" placeholder="Username" aria-label="Name" name="name" required>
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text"><i class="fas fa-envelope"></i></span>
