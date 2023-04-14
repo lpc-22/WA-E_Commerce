@@ -13,6 +13,7 @@
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="Style/style.css">
+    <link rel="icon" type="image/png" sizes="16x16" href="Img/favicon-16x16.png">
     <title>Online Pet Store - Cart</title>
     <!--trash icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
