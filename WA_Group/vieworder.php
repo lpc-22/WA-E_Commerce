@@ -133,7 +133,7 @@ $link->close();
             <div class="card-header d-flex justify-content-between align-items-center">
                 <span>Order ID: <?= $order['id'] ?> | Date: <?= $order['order_date'] ?> | Total: $<?= $order['total'] ?></span>
                 <div>
-                    <a href="mailto:?subject=I%20want%20to%20report%20the%20order%20%23<?= $order['id'] ?>&body=Order%20ID:%20<?= $order['id'] ?>%0A%0APlease%20describe%20your%20issue%20here:" class="btn btn-danger">Report Problem</a>
+                    <a href="mailto:petify_COMP3421@gmail.com?subject=I%20want%20to%20report%20the%20order%20%23<?= $order['id'] ?>&body=Order%20ID:%20<?= $order['id'] ?>%0A%0APlease%20describe%20your%20issue%20here:" class="btn btn-danger">Report Problem</a>
                 </div>
             </div>
             <div class="card-body">
