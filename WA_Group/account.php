@@ -114,7 +114,7 @@ if (isset($_POST['sign-out'])) {
 
 	
     <div class="container-sm text-center d-flex align-content-center" id="account-container">
-        <div class="card mx-auto my-5 border-dark border">
+        <div class="card mx-auto my-5 border-dark border shadow-lg">
             <div class="card-header">
                 <h2>Account Information</h2>
             </div>

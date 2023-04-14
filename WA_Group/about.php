@@ -15,7 +15,7 @@
     <?php include("navBar.php") ?>
 
     <div class="container-lg my-5 mx-auto" style="min-height: 70vh;">
-        <div class="card my-5 mx-auto" style="max-width: 80vw;">
+        <div class="card my-5 mx-auto shadow-lg" style="max-width: 80vw;">
             <div class="row g-0">
                 <div class="col-md-5">
                     <img src="Img/about-img-1.webp" class="img-fluid rounded w-100" alt="...">
@@ -30,7 +30,7 @@
             </div>
         </div>
 
-        <div class="card my-5 mx-auto" style="max-width: 80vw;">
+        <div class="card my-5 mx-auto shadow-lg" style="max-width: 80vw;">
             <div class="row g-0">
                 <div class="col-md-5">
                     <img src="Img/about-img-1.webp" class="img-fluid rounded w-100" alt="...">

@@ -35,7 +35,7 @@
     <?php include("navBar.php")?>
 	
     <div class="container">
-        <div class="login-container">
+        <div class="login-container shadow p-3 mb-5 bg-body-tertiary rounded">
             <h2 class="text-center mb-4">Online Pet Store</h2>
             <form action="loginSession.php" method="post">
                 <div class="input-group mb-3">
