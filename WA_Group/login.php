@@ -47,7 +47,7 @@
                     <span class="input-group-text"><i class="fas fa-lock"></i></span>
                     <input type="password" class="form-control" placeholder="Password" aria-label="Password" name="password">
                 </div>
-                <button type="submit" class="btn btn-primary w-100 mb-3">Sign In</button>
+                <button type="submit" class="btn btn-dark w-100 mb-3">Sign In</button>
             </form>
             <p class="text-center">Don't have an account? <a href="signup.php">Sign Up</a></p>
         </div>
