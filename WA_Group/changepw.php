@@ -1,28 +1,54 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+
 session_start();
+require_once "connection.php";
 
-if (!isset($_SESSION['username']) || !isset($_SESSION['email'])) {
-	?>
-	<script>
-		// alert("Please Log in first");
-		window.location.href = 'login.php';
-	</script>
-	<?php
+$message = "";
+
+if (isset($_POST['change_password'])) {
+    $current_password = $_POST['current_password'];
+    $new_password = $_POST['new_password'];
+    $confirm_password = $_POST['confirm_password'];
+    $username = $_POST['username'];
+
+$stmt = $link->prepare("SELECT password FROM users WHERE name = ?");
+$stmt->bind_param("s", $username);
+$stmt->execute();
+$stmt->bind_result($db_password);
+$stmt->fetch();
+$stmt->close();
+
+
+if (password_verify($current_password, $db_password)) {
+    if ($new_password === $confirm_password) {
+        $hashed_password = password_hash($new_password, PASSWORD_DEFAULT);
+
+        $stmt = $link->prepare("UPDATE users SET password = ? WHERE name = ?");
+        $stmt->bind_param("ss", $hashed_password, $username);
+        $stmt->execute();
+        $stmt->close();
+
+		?>
+		<script>
+			alert("Password updated successfully!");
+			window.location.href = 'account.php';
+		</script>
+		<?php
+    } else {
+        $message = "New password and confirm password do not match.";
+    }
+} else {
+    $message = "Incorrect current password.";
 }
-
-$username = $_SESSION['username'];
-$email = $_SESSION['email'];
-
-if (isset($_POST['sign-out'])) {
-    session_destroy();
-    header("Location: index.php");
-    exit;
 }
 ?>
 
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="light">
-
+<html>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -30,7 +56,6 @@ if (isset($_POST['sign-out'])) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="stylesheet" href="Style/style.css">
-    <link rel="icon" type="image/png" sizes="16x16" href="Img/favicon-16x16.png">
     <title>Online Pet Store -Account</title>
     <style>
         th {
@@ -58,7 +83,6 @@ if (isset($_POST['sign-out'])) {
         }
     </style>
 </head>
-
 <body>
 <nav class="navbar navbar-expand-sm bg-dark" data-bs-theme="dark">
     <div class="container-lg">
@@ -112,49 +136,37 @@ if (isset($_POST['sign-out'])) {
         </div>
     </div>
 </nav>
+  
+  <h1>Change Password</h1>
+  <form method="post">
+    <label for="username">Username:</label>
+    <input type="text" name="username" id="username" required>
+    <br>
+    <label for="current_password">Current Password:</label>
+    <input type="password" name="current_password" id="current_password" required>
+    <br>
+    <label for="new_password">New Password:</label>
+    <input type="password" name="new_password" id="new_password" required>
+    <br>
+    <label for="confirm_password">Confirm Password:</label>
+    <input type="password" name="confirm_password" id="confirm_password" required>
+    <br>
+    <input type="submit" name="change_password" value="Change Password">
+  </form>
+  
+  <?php
+  if (!empty($message)) {
+      echo "<p>$message</p>";
+  }
+  ?>
+  
+	<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
 
+	</div>
 	
-    <div class="container-sm text-center d-flex align-content-center" id="account-container">
-        <div class="card mx-auto my-5 border-dark border shadow-lg">
-            <div class="card-header">
-                <h2>Account Information</h2>
-            </div>
-
-            <img src="Img/OIP.jpeg" class="card-img-top mx-auto mt-5 rounded-circle" alt="...">
-
-            <div class="card-body mx-auto">
-                <!-- Table -->
-                <table class="table mt-3">
-                    <tbody>
-                        <tr>
-                            <th>User Name: </th>
-                            <td><?php echo htmlspecialchars($username); ?></td>
-                        </tr>
-                        <tr>
-                            <th>Email Address: </th>
-                            <td><?php echo htmlspecialchars($email); ?></td>
-                        </tr>
-                    </tbody>
-                </table>
-
-            </div>
-			
-			<button onclick="window.location.href='changepw.php'" class="btn btn-primary">Change Password</button></br>
-		
-			<form method="post">
-				<button type="submit" name="sign-out" class="btn btn-danger">Sign Out</button>
-			</form>
-			
-            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-
-            </div>
-        </div>
-
-    </div>
-
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
 		crossorigin="anonymous"></script>
-        <?php include("footer.php") ?>
+			
 </body>
 </html>

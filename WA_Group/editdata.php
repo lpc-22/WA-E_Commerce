@@ -1,28 +1,58 @@
 <?php
-session_start();
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
-if (!isset($_SESSION['username']) || !isset($_SESSION['email'])) {
-	?>
-	<script>
-		// alert("Please Log in first");
-		window.location.href = 'login.php';
-	</script>
-	<?php
+session_start();
+// Check if the user is logged in, if not, redirect to the login page
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+    header('Location: login.php');
+    exit;
 }
 
-$username = $_SESSION['username'];
-$email = $_SESSION['email'];
+// Include the connection.php file to connect to the database
+require_once 'connection.php';
 
-if (isset($_POST['sign-out'])) {
-    session_destroy();
-    header("Location: index.php");
+// Get the user information from the database
+if (isset($_SESSION['id'])) {
+    if ($stmt = $link->prepare('SELECT name, email FROM users WHERE id = ?')) {
+        $stmt->bind_param('i', $_SESSION['id']);
+        $stmt->execute();
+        $stmt->bind_result($name, $email);
+        $stmt->fetch();
+        $stmt->close();
+    }
+} else {
+    echo "Session data not available.";
     exit;
+}
+
+// Store the user ID in a variable
+$userId = $_SESSION['id'];
+
+// Update the user information in the database
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if(isset($_POST['username']) && isset($_POST['email'])) {
+        $newUsername = $_POST['username'];
+        $newEmail = $_POST['email'];
+        
+        // Use the $userId variable instead of directly using $_SESSION['id']
+        if ($stmt = $link->prepare('UPDATE users SET name = ?, email = ? WHERE id = ?')) {
+            $stmt->bind_param('ssi', $newUsername, $newEmail, $userId);
+            $stmt->execute();
+            $stmt->close();
+            
+            // Update session data
+            $_SESSION['name'] = $newUsername;
+            header('Location: account.php');
+            exit;
+        }
+    }
 }
 ?>
 
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="light">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -31,7 +61,7 @@ if (isset($_POST['sign-out'])) {
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="stylesheet" href="Style/style.css">
     <link rel="icon" type="image/png" sizes="16x16" href="Img/favicon-16x16.png">
-    <title>Online Pet Store -Account</title>
+    <title>Edit account information</title>
     <style>
         th {
             text-align: left;
@@ -58,7 +88,6 @@ if (isset($_POST['sign-out'])) {
         }
     </style>
 </head>
-
 <body>
 <nav class="navbar navbar-expand-sm bg-dark" data-bs-theme="dark">
     <div class="container-lg">
@@ -113,48 +142,16 @@ if (isset($_POST['sign-out'])) {
     </div>
 </nav>
 
-	
-    <div class="container-sm text-center d-flex align-content-center" id="account-container">
-        <div class="card mx-auto my-5 border-dark border shadow-lg">
-            <div class="card-header">
-                <h2>Account Information</h2>
-            </div>
-
-            <img src="Img/OIP.jpeg" class="card-img-top mx-auto mt-5 rounded-circle" alt="...">
-
-            <div class="card-body mx-auto">
-                <!-- Table -->
-                <table class="table mt-3">
-                    <tbody>
-                        <tr>
-                            <th>User Name: </th>
-                            <td><?php echo htmlspecialchars($username); ?></td>
-                        </tr>
-                        <tr>
-                            <th>Email Address: </th>
-                            <td><?php echo htmlspecialchars($email); ?></td>
-                        </tr>
-                    </tbody>
-                </table>
-
-            </div>
-			
-			<button onclick="window.location.href='changepw.php'" class="btn btn-primary">Change Password</button></br>
-		
-			<form method="post">
-				<button type="submit" name="sign-out" class="btn btn-danger">Sign Out</button>
-			</form>
-			
-            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-
-            </div>
-        </div>
-
-    </div>
-
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-		crossorigin="anonymous"></script>
-        <?php include("footer.php") ?>
+    <h1>Edit Account Information</h1>
+    <form action="editdata.php" method="post">
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username" value="<?php echo htmlspecialchars($name); ?>" required>
+        
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" value="<?php echo htmlspecialchars($email); ?>" required>
+        
+        <input type="submit" value="Save Changes">
+    </form>
+    <a href="account.php">Back to Account</a>
 </body>
 </html>
