@@ -144,10 +144,10 @@ if($getOut){
                                             <input class="form-control" readonly type="text" name="ModProduct_ID"value='.$row['id'].'><br>
 
                                             <label>Name:</label><br>
-                                            <input class="form-control" type="text" name="ModProduct_Name" placeholder="Product Name" value='.$row['name'].'><br>
+                                            <input class="form-control" type="text" name="ModProduct_Name" placeholder="Product Name" value="'.$row['name'].'"><br>
 
                                             <label>Description:</label><br>
-                                            <input class="form-control" type="text" name="ModProduct_Description" value='.$row['description'].'><br>
+                                            <input class="form-control" type="text" name="ModProduct_Description" value="'.$row['description'].'"><br>
                                             
                                             <label>Category:</label><br>
                                             ';
