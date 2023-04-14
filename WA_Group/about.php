@@ -9,6 +9,11 @@
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="stylesheet" href="Style/style.css">
     <title>Online Pet Store</title>
+    <style>
+        p {
+            text-indent: 50px;
+        }
+</style>
 </head>
 
 <body style="min-height: 100vh;">
@@ -23,7 +28,7 @@
                 <div class="col-lg-7">
                     <div class="card-body">
                         <h2 class="card-title">About Us</h5>
-                        <p class="card-text">Eiusmod ex commodo ut nulla enim ea mollit irure excepteur anim commodo officia. Adipisicing consequat velit laborum proident. Elit eu mollit aliquip nostrud do culpa id aliqua ut fugiat cupidatat. Veniam dolore laborum magna. Aliqua dolore in aute labore eu voluptate aliqua nisi et. Do dolor aliquip dolor consectetur laboris deserunt sunt Lorem.</p>
+                        <p class="card-text">Welcome to Petitfy! We are a team of animal lovers who are passionate about providing the best caring for your pets. Our store have been servicing pet owners since 2001. Our goal for this pet shopping platform is to provide you with a one-stop-shop for all your pet needs.</p>
                     </div>
                 </div>
             </div>
@@ -36,8 +41,13 @@
                 </div>
                 <div class="col-lg-7">
                     <div class="card-body">
-                        <h2 class="card-title">About Us</h5>
-                        <p class="card-text">Eiusmod ex commodo ut nulla enim ea mollit irure excepteur anim commodo officia. Adipisicing consequat velit laborum proident. Elit eu mollit aliquip nostrud do culpa id aliqua ut fugiat cupidatat. Veniam dolore laborum magna. Aliqua dolore in aute labore eu voluptate aliqua nisi et. Do dolor aliquip dolor consectetur laboris deserunt sunt Lorem.</p>
+                        <h2 class="card-title">Our Services</h5>
+                        <p class="card-text">In Petitfy, our mission is to provide high-quality product that help you take care of your pet. Our team is dedicated to helping you find the right product for your pet's needs and answering any questions you may have. We offer a range of product to help you take care of your pats. For the products, we provide:</p>
+                        <ul>
+                            <li>High-quality pet food</li>
+                            <li>Health treats</li>
+                            <li>Safe and funny pet toys</li>
+                        </ul>
                     </div>
                 </div>
             </div>
