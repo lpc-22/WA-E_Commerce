@@ -11,10 +11,42 @@
     <title>Online Pet Store</title>
 </head>
 
-<body>
-    <?php 
-    include("navBar.php") ?>
+<body style="min-height: 100vh;">
+    <?php include("navBar.php") ?>
 
+    <div class="container-lg my-5 mx-auto" style="min-height: 70vh;">
+        <div class="card my-5 mx-auto" style="max-width: 80vw;">
+            <div class="row g-0">
+                <div class="col-md-5">
+                    <img src="Img/about-img-1.webp" class="img-fluid rounded w-100" alt="...">
+                </div>
+                <div class="col-md-7">
+                    <div class="card-body">
+                        <h2 class="card-title">About Us</h5>
+                        <p class="card-text">Eiusmod ex commodo ut nulla enim ea mollit irure excepteur anim commodo officia. Adipisicing consequat velit laborum proident. Elit eu mollit aliquip nostrud do culpa id aliqua ut fugiat cupidatat. Veniam dolore laborum magna. Aliqua dolore in aute labore eu voluptate aliqua nisi et. Do dolor aliquip dolor consectetur laboris deserunt sunt Lorem.</p>
+                        <p class="card-text">Eiusmod ex commodo ut nulla enim ea mollit irure excepteur anim commodo officia. Adipisicing consequat velit laborum proident. Elit eu mollit aliquip nostrud do culpa id aliqua ut fugiat cupidatat. Veniam dolore laborum magna. Aliqua dolore in aute labore eu voluptate aliqua nisi et. Do dolor aliquip dolor consectetur laboris deserunt sunt Lorem.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card my-5 mx-auto" style="max-width: 80vw;">
+            <div class="row g-0">
+                <div class="col-md-5">
+                    <img src="Img/about-img-1.webp" class="img-fluid rounded w-100" alt="...">
+                </div>
+                <div class="col-md-7">
+                    <div class="card-body">
+                        <h2 class="card-title">About Us</h5>
+                        <p class="card-text">Eiusmod ex commodo ut nulla enim ea mollit irure excepteur anim commodo officia. Adipisicing consequat velit laborum proident. Elit eu mollit aliquip nostrud do culpa id aliqua ut fugiat cupidatat. Veniam dolore laborum magna. Aliqua dolore in aute labore eu voluptate aliqua nisi et. Do dolor aliquip dolor consectetur laboris deserunt sunt Lorem.</p>
+                        <p class="card-text">Eiusmod ex commodo ut nulla enim ea mollit irure excepteur anim commodo officia. Adipisicing consequat velit laborum proident. Elit eu mollit aliquip nostrud do culpa id aliqua ut fugiat cupidatat. Veniam dolore laborum magna. Aliqua dolore in aute labore eu voluptate aliqua nisi et. Do dolor aliquip dolor consectetur laboris deserunt sunt Lorem.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <?php include("footer.php") ?>
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
