@@ -12,6 +12,7 @@
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="Style/style.css">
+    <link rel="icon" type="image/png" sizes="16x16" href="Img/favicon-16x16.png">
     <script src="Script/product.js"></script>
     <title>Petify Online Pet Store</title>
 </head>

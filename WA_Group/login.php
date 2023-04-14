@@ -8,6 +8,7 @@
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" crossorigin="anonymous">
     <link rel="stylesheet" href="Style/style.css">
+    <link rel="icon" type="image/png" sizes="16x16" href="Img/favicon-16x16.png">
     <title>Login - Online Pet Store</title>
     <style>
         .login-container {
