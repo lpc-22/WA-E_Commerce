@@ -24,7 +24,7 @@
     <div class="row gx-5">
         <div class="col-lg-6 my-2">
             <h1>Contact us</h1>
-            <p>Esse voluptate proident officia cillum amet. Incididunt ipsum qui et velit ex exercitation aliqua adipisicing culpa nulla consectetur Lorem exercitation sint incididunt. Proident adipisicing nulla officia non consectetur. Aliqua veniam ad nulla deserunt aute elit ad occaecat esse eiusmod. Id ullamco ea aliqua amet amet amet ea culpa voluptate aliqua. Nulla veniam veniam mollit deserunt laboris et pariatur ullamco officia ex dolore excepteur. Nostrud id cupidatat esse consequat in occaecat excepteur velit elit sint quis. Consectetur qui enim laboris do sint fugiat esse eiusmod aute ullamco ea reprehenderit adipisicing.</p>
+            <p>Welcome to Petitfy! We are a team of animal lovers who are passionate about providing the best caring for your pets. Our store have been servicing pet owners since 2001. Our goal for this pet shopping platform is to provide you with a one-stop-shop for all your pet needs.</p>
             <h1>Address:</h1>
             <p>Room xxx, Block xxx, X/F XXXX XXXX XX</p>
             <p>xx xxxxx xx Street, xxx xxx xxx, Hong Kong</p>
